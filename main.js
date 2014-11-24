@@ -7,7 +7,8 @@
 
   if( cluster.isMaster ){
     master();
-  }else{
+  }else if( cluster.isWorker ){
     worker();
   }
-}();
+
+})();
