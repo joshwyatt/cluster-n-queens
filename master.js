@@ -1,17 +1,11 @@
 ;(function(){
   'use strict';
 
-  var formQueue = require('./formQueue');
-  var countSolutions = require('./countSolutions');
+  var countSolutionsArgs = require('./main.js').countSolutionsArgs;
 
-  module.exports = function(){
+  module.exports = function(n, row){
     console.log('master module is beginning');
 
-    formQueue.run(4, 1);
-    console.log('just ran formQueue.run, here is the functionArguments queue: ' + formQueue.functionArguments);
-
-    formQueue.functionArguments.forEach(function(args){
-      console.log('one set of args: ' + args);
-    });
+    console.log('in master: ' + countSolutionsArgs);
   };
 })();

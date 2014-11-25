@@ -54,10 +54,8 @@ var countSolutions = function(n, rowNumber, attackedSquareRows, flags, check, co
       attackedSquareRows.push(moreAttackedSquareRows);
       solutions += countSolutions(n, rowNumber + 1, attackedSquareRows, flags, check);
       attackedSquareRows.pop();
-
     }
   }
-
 
   return solutions;
 };
