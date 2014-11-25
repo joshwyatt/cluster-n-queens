@@ -10,10 +10,9 @@
   var countSolutionsArgs = module.exports.countSolutionsArgs = require('./makeArgs')(n, rowToStartAt);
   var master = require('./master.js');
   var worker = require('./worker.js');
-  var countSolutions = require('./countSolutions');
 
   if( cluster.isMaster ){
-    master(n, rowToStartAt);
+    master();
   }else if( cluster.isWorker ){
     worker();
   }
