@@ -1,22 +1,19 @@
 ;(function(){
   'use strict';
-
-  var cluster = require('cluster');
-  var master = require('./master.js');
-  var worker = require('./worker.js');
-
-  var makeArgs = require('./makeArgs');
-  var countSolutions = require('./countSolutions');
-
+  //command line args
   var n = +process.argv[2];
   var rowToStartAt = +process.argv[3];
-  console.log(rowToStartAt);
 
-  module.exports.countSolutionsArgs = makeArgs(n, rowToStartAt);
-  console.log('in main: ' + module.exports.countSolutionsArgs);
+  //core modules
+  var cluster = require('cluster');
+  //file modules. Order is important, we're using countSolutionArgs elsewhere
+  var countSolutionsArgs = module.exports.countSolutionsArgs = require('./makeArgs')(n, rowToStartAt);
+  var master = require('./master.js');
+  var worker = require('./worker.js');
+  var countSolutions = require('./countSolutions');
 
   if( cluster.isMaster ){
-    master();
+    master(n, rowToStartAt);
   }else if( cluster.isWorker ){
     worker();
   }
