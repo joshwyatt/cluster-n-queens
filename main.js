@@ -11,4 +11,6 @@
     worker();
   }
 
+  //the sum of 0 to 99 is 4950
+
 })();

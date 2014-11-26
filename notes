@@ -1,0 +1,44 @@
+Time Complexity
+
+his sense of what 'constant time complexity means is quite skewed' ln 49
+
+PART 2
+he mostly has the gist of it, but is off on important details, which unfotunately make the entire close to incoherent
+
+PART 1
+
+Outstanding Dean!
+
+Thanks for sending me Brian’s self-assessment, I’m glad I had a chance to look over it.
+
+tl;dr - Brian is on course, though a little sloppy, and needs some special attention understanding and articulating about time complexity.
+
+With regard to his work in describing the various time complexities, there are instances where he is close to at least the spirit of the various complexities, however, the details of his descriptions are consistently off, and at times describes one of the time complexities in fundamentally different ways at different times. The places where he misses a detail or two in his descriptions come across in a way that sounds almost inarticulate, and this should be corrected or he will come off as inaccurately unintelligent.
+
+Fortunately his implementation of find_dups was solid, and in fact he demonstrated a sensitivity to time complexity in practice that was great to see (using object for constant time look up rather than double-iterating over the array). He used an ‘i’ in a few places where he should have used a ’t’ and this cost him points on taser. Not surprising however was that his assessment of the time complexity of his own function was similarly as incorrect an inarticulate as in other places.
+
+His pseudo-classical refactor was not perfect, but fit in with current student trends…again with a little slop, which I expect some debugging would resolve.
+
+I have played Ricochet Robots with Brian and he is a beast! Time complexity is a special kind of thing, and I think it must seem weird to him articulating it, even though he seems to have a practical sense for it.
+
+I’m going to add 1 to the time complexity count in Off By One. (‘Off By One’ is a fictional program where by we can very easily increment counts for topics when students are struggling with a particular topic so as to catch and identify where we should modify the curriculum. Probably you already have something like this?) I am also going to meet with him this week so that he will be able to articulate time complexity accurately and impressively. I will schedule a ping for the hiring day assessment (also a fictitious piece of software) so that we make sure to confirm that he has come along by then, and depending on how I feel after my meeting with him will ask the HIR Dan (who I trust with this sort of thing) to send a couple time complexity analysis questions his way during toy problem solution lectures.
+
+Let me know what you think.
+Best!
+Josh
+
+/*
+I have a question for each of you which is how do you develop a sense for when and if people do a lot of copy and pasting?
+*/ 
+
+PART 2
+
+There’s tons of room for optimizations in the grading of this self-assessment, awesome!
+
+For starters, and in general, the places where the taser code is 0/0 is problematic for us…if we can’t quantify we must do it manually. Though the “essay questions” I think will not be easily automated, however, a slight refactor of the `algo-complexity` section such that the students do something like “fill in the blank” for their answer, will make that section easy to test. Then we can simply read the “essay questions” for the students who score poorly on the `algo-complextiy` section, plus a few random random samplings until we feel confident our idea does what we need. (As an aside, if you like this idea let me know and I’ll submit a pull request).
+
+Although the use of the linter is strongly recommended to students, I would like, ever so briefly, before the first self-assessment, to make sure that every student feels comfortable running any code that they are working in through some sort of console so that they will get thrown errors when they have made them. Students don’t want to pass bugs to taser, but I think will send in less buggy code if they can *quickly* see their own errors and have a chance to debug them. This of course will render us more high scores for solidly written code, and we will spend less time looking deeply into code that is showing low scores simply because of a simple bug. It might even make sense to make the tests available at the time the students are writing the code, although I don’t know so much about a lot of the tests out there. (As another aside, I can create a screencast to be made available to incoming students to be able to make their own console in sublime. Not only is it appropriate for the skill level of incoming students, but I did this for myself and continue to use mine on a daily basis. I taught people in my cohort struggling with toy problems the same thing and they thanked me for it.)
+
+PART 3?
+
+I’ll love some feedback. I don’t want to take up too much of your time in general, but at the outset I think you’ll find any instruction towards your preferences or with regards to things you see I miss will pay off rapidly. Thanks again for your consideration!

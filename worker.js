@@ -4,9 +4,9 @@
 
   function worker(){
     console.log('worker is starting');
-    var args = process.env.args.split(',');
-    var res = tester.apply(null, args);
-    console.log(res);
+    var args = process.env.args;
+    process.send(args);
+    cluster.worker.kill();
   }
 
   function tester(a, b){
