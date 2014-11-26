@@ -1,5 +1,6 @@
 ;(function(){
   'use strict';
+  //core modules
   var cluster = require('cluster');
 
   module.exports = function(){
