@@ -2,11 +2,13 @@
 var http = require('http');
 var os = require('os');
 //command line args
-var cabezaLocation = process.argv[2];
-
+var cabezaIP = process.argv[2];
+//construct url
 var numberOfCPUs = os.cpus().length;
+var queryString = '?cpus=' + numberOfCPUs;
+var cabezaURL = [cabezaIP, queryString].join('');
 
-http.get(cabezaLocation, function(res){
+http.get(cabezaURL, function(res){
   res.on('data', function(data){
     console.log('inside finger here is the response from cabeza: ' + data);
   });

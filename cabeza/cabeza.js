@@ -10,6 +10,7 @@
   });
 
   function requestHandler(req, res){
+    res.end('you sent a request');
     if( req.method === 'GET' ){
       res.end('you sent a get request');
     }else{
