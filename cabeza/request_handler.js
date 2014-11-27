@@ -1,17 +1,11 @@
 ;(function(){
   'use strict';
   //core modules
-  var http = require('http');
+  var url = require('url');
   //file modules
-  var requestHandler = require('./request_handler.js');
-  //command line args
-  var port = process.argv[2];
+  var queryFunctions = require('./queryFunctions.js');
 
-  http.createServer(requestHandler).listen(port, function(){
-    console.log('listening on ' + port);
-  });
-
-  function requestHandler(req, res){
+  module.exports = function(req, res){
     if( req.method === 'GET' ){
       var queryParams = url.parse(req.url).query.split('=');
       var fn = queryParams[0];
@@ -21,6 +15,5 @@
     }else{
       res.end('this was not a GET request');
     }
-  }
-  
+  };
 })();
